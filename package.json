@@ -2,7 +2,7 @@
   "name": "with-redux-toolkit",
   "version": "1.0.0",
   "scripts": {
-    "dev": "next",
+    "dev": "next NODE_OPTIONS=--openssl-legacy-provider npm-run-all ...",
     "build": "next build",
     "start": "next start"
   },
