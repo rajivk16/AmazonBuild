@@ -34,7 +34,7 @@ const ProductFeed = ({ products }) => {
               price={price}
               description={description}
               category={category}
-              image={image}
+              image={image} 
             />
           ))}
       </div>

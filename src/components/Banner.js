@@ -4,6 +4,11 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 
 
 
+/**
+ * It returns a div with a class of relative, which contains a div with a class of absolute, which
+ * contains a Carousel component.
+ * @returns A React component that renders a carousel.
+ */
 const Banner = () => {
   return (
     <div className="relative">
