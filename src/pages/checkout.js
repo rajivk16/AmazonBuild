@@ -74,7 +74,7 @@ function Checkout() {
         <div className="flex flex-col bg-white p-10 shadow-md">
           {items.length > 0 && (
             <>
-              <h2 className="whitespoace-nowrap">
+              <h2 className="whitespoace-wrap">
                 Subtotal ({items.length} items):
                 <span className="font-bold ml-2">
                   <Currency quantity={total} currency="INR" />

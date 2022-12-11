@@ -33,7 +33,7 @@ const Product = ({ id, title, price, description, category, image}) => {
         {category}
       </p>
 
-      <Image src={image} height={200} width={200} objectFit="contain" />
+      <Image src={image} height={200} width={200} objectFit="contain" alt="" />
       <h4 className="my-3">{title}</h4>
 
       <div className="flex">
