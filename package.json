@@ -24,6 +24,10 @@
     "react-responsive-carousel": "^3.2.23",
     "stripe": "^11.2.0"
   },
+  "peerDependencies": {
+    "immer": ">=2.0.0",
+    "react": "^16.8.0 || ^17.0.1"
+  },
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^10.2.5",
