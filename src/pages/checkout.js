@@ -29,7 +29,7 @@ function Checkout() {
       sessionId: checkoutSession.data.id,
     });
     if (result.error) {
-      alert(result.error.message);
+      alert(error.response.data);
     }
   };
 
@@ -48,7 +48,7 @@ function Checkout() {
             alt=""
           />
           <div className="flex flex-col p-5 space-y-10 bg-white">
-            <h1 className="text-6xl border-b pb-4">
+            <h1 className="text-5xl border-b pb-4">
               {items.length === 0
                 ? "Your Amazon Basket is Empty"
                 : "Shopping Basket"}
@@ -82,7 +82,7 @@ function Checkout() {
               </h2>
               <button
                 role="link"
-                onclick={createCheckoutSession}
+                onClick={createCheckoutSession}
                 disabled={!session}
                 className={`button mt-2 ${
                   !session &&
