@@ -24,7 +24,7 @@ export default async (req, res) => {
         shipping_rate_data: {
           type: "fixed_amount",
           fixed_amount: { amount: 6000, currency: "inr" },
-          display_name: "Free shipping",
+          display_name: "Fast shipping",
           delivery_estimate: {
             minimum: { unit: "business_day", value: 2 },
             maximum: { unit: "business_day", value: 4 },

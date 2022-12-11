@@ -29,7 +29,7 @@ function Checkout() {
       sessionId: checkoutSession.data.id,
     });
     if (result.error) {
-      alert(error.response.data);
+      alert(result.error.message);
     }
   };
 
