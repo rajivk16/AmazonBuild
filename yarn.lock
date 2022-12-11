@@ -1701,7 +1701,7 @@
   "resolved" "https://registry.npmjs.org/idb/-/idb-3.0.2.tgz"
   "version" "3.0.2"
 
-"immer@^9.0.16", "immer@>=2.0.0":
+"immer@^9.0.16":
   "integrity" "sha512-qenGE7CstVm1NrHQbMh8YaSzTZTFNP3zPqr3YU0S0UY441j4bJTg4A2Hh5KAhwgaiU6ZZ1Ar6y/2f4TblnMReQ=="
   "resolved" "https://registry.npmjs.org/immer/-/immer-9.0.16.tgz"
   "version" "9.0.16"
