@@ -6,11 +6,32 @@ import { useSelector } from "react-redux";
 import { selectItems, selectTotal } from "../slices/basketSlice";
 import Currency from "react-currency-formatter";
 import { useSession } from "next-auth/react";
+import { loadStripe } from "@stripe/stripe-js";
+import axios from "axios";
 
-function checkout() {
+const stripePromise = loadStripe(process.env.stripe_public_key);
+
+function Checkout() {
   const items = useSelector(selectItems);
   const total = useSelector(selectTotal);
   const { data: session } = useSession();
+
+  const createCheckoutSession = async () => {
+    const stripe = await stripePromise;
+
+    const checkoutSession = await axios.post("/api/create-checkout-session", {
+      items: items,
+      email: session.user.email,
+    });
+
+    // redirect user to stripe checkout
+    const result = await stripe.redirectToCheckout({
+      sessionId: checkoutSession.data.id,
+    });
+    if (result.error) {
+      alert(result.error.message);
+    }
+  };
 
   return (
     <div className="bg-gray-100">
@@ -27,7 +48,7 @@ function checkout() {
             alt=""
           />
           <div className="flex flex-col p-5 space-y-10 bg-white">
-            <h1 classname="text-7xl border-b pb-4">
+            <h1 className="text-6xl border-b pb-4">
               {items.length === 0
                 ? "Your Amazon Basket is Empty"
                 : "Shopping Basket"}
@@ -60,6 +81,8 @@ function checkout() {
                 </span>
               </h2>
               <button
+                role="link"
+                onclick={createCheckoutSession}
                 disabled={!session}
                 className={`button mt-2 ${
                   !session &&
@@ -76,4 +99,4 @@ function checkout() {
   );
 }
 
-export default checkout;
+export default Checkout;

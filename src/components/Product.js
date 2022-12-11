@@ -11,7 +11,7 @@ const MIN_RATING = 1;
 /**
  * The function is a React component that takes in props and returns a JSX element.
  */
-const Product = ({ id, title, price, description, category, image }) => {
+const Product = ({ id, title, price, description, category, image}) => {
   const dispatch = useDispatch();
 
   const [rating] = useState(
@@ -21,7 +21,7 @@ const Product = ({ id, title, price, description, category, image }) => {
   const [hasPrime] = useState(Math.random() < 0.5);
 
   const addItemToBasket = () => {
-    const product = { id, title, price, description, category, image, hasPrime };
+    const product = { id, title, price, description, category, image, hasPrime, rating };
     /* Dispatching an action to the redux store. */
     dispatch(addToBasket(product))
   };
